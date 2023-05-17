@@ -10,6 +10,8 @@ namespace Data
         //      is greater than the searched number
         // 3. once a relevant block is identified -> linear search 
         // Linear Search: scans through each element in a list until it finds the value
+
+
         //public (int, int) Search(List<int> sortedList, int searchedNumber)
         //{
         //    int blockSize = (int)Math.Sqrt(sortedList.Count); // calculate the block size based on the square root of the list size
@@ -50,20 +52,21 @@ namespace Data
                 return (-1, -1); // Number not found
             }
 
-            int end = Math.Min(start + blockSize, sortedList.Count) - 1;
+            int end = Math.Min(start + blockSize, sortedList.Count) - 1; // creating the blocks
 
-            if (sortedList[end] >= searchedNumber)
+            if (sortedList[end] >= searchedNumber) // if the end of the block is bigger than the searched number
             {
                 if (sortedList[start] == searchedNumber)
                 {
                     return (start, sortedList[start]); // Number found at the start index
                 }
 
+                // if number is not at the start of the block we call again the JumpSearchRecursive function
                 return JumpSearchRecursive(sortedList, searchedNumber, start + 1, blockSize);
             }
 
+            // if the searched number is not in the current block
             return JumpSearchRecursive(sortedList, searchedNumber, end + 1, blockSize);
         }
-
     }
 }

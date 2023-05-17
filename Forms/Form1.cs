@@ -90,17 +90,15 @@ namespace Forms
 
             stopwatch.Reset();
             stopwatch.Start();
-            (position, value) = searchService.SearchNumbes("binary", items, (int)searchNumericUpDown.Value);
+            (_, _) = searchService.SearchNumbes("binary", items, (int)searchNumericUpDown.Value);
             stopwatch.Stop();
             binarySearchResultLbl.Text = $"{stopwatch.Elapsed.TotalMilliseconds / 1000.0} Seconds";
 
             stopwatch.Reset();
             stopwatch.Start();
-            (_, _) = searchService.SearchNumbes("jump", items, (int)searchNumericUpDown.Value);
+            (position, value) = searchService.SearchNumbes("jump", items, (int)searchNumericUpDown.Value);
             stopwatch.Stop();
             jumpSearchResultLbl.Text = $"{stopwatch.Elapsed.TotalMilliseconds / 1000.0} Seconds";
-
-
 
             if (position == -1)
             {
