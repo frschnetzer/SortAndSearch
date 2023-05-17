@@ -11,3 +11,4 @@ Ansonsten erscheint eine Fehler Meldung.
 Auch hier wird die Zeit für beide Algorithmen gestoppt und im UI angezeigt.
 
 Erstellt von Schnetzer Franziska
+GitHub Repos: https://github.com/frschnetzer/SortAndSearch
